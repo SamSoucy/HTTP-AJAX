@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../App.css';
 
 
 const FriendsList = props => {
@@ -8,7 +9,8 @@ const FriendsList = props => {
          <div>
            <h2 key={friend.id}>Name: {friend.name}</h2>
            <p>Age: {friend.age}</p>
-           <p>Email: {friend.email}</p>
+            <p>Email: {friend.email}</p>
+            <button OnClick={e=> props.deleteFriend(e, friend.id)} className="md-button form-button">Delete Friend</button>
           </div>))         
         }
       </div>

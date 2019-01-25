@@ -2,15 +2,25 @@ import React from "react";
 import '../App.css'
 
 function FriendForm(props) {
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     if (props.isUpdating) {
+    //         props.updateFriend();
+    //     } else {
+    //         props.addFriend();
+    //     }
+    // }
+      
+    
     return (
         <div>
             <h2><strong>Add New Friend!!</strong></h2>
-        <form onSubmit={props.addFriend}>
+        <form onSubmit={props.handleChanges}>
             <input
                 type="text"
                 name="name"
+                value={props.friend.name}
                 placeholder="Name"
-                value={props.newFriend.name}
                 onChange={props.handleChanges}
                 />
                 <div className="baseline" />
@@ -18,8 +28,8 @@ function FriendForm(props) {
                 <input
                 type="number"
                 name="age"
+                value={props.friend.age}
                 placeholder="Age"
-                value={props.newFriend.age}
                 onChange={props.handleChanges}
                 />
                 <div className="baseline" />
@@ -27,16 +37,18 @@ function FriendForm(props) {
                 <input
                 type="text"
                 name="email"
+                value={props.friend.email}
                 placeholder="email"
-                value={props.newFriend.email}
                 onChange={props.handleChanges}
                 />
                 <div className="baseline" />
-                <button className="button"onClick={props.addFriend}>Submit</button>
+                <button type="submit" className="md-button form-button">
+                    {props.isUpdating ? 'Update friend' :  "Add new Friend"}
+                </button>
         
         </form>
         </div>
     );
-}
+    }
 
 export default FriendForm;
