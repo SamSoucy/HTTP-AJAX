@@ -1,10 +1,11 @@
 import React from "react";
+import '../App.css'
 
 function FriendForm(props) {
     return (
         <div>
             <h2><strong>Add New Friend!!</strong></h2>
-        <form onSubmit={props.submit}>
+        <form onSubmit={props.addFriend}>
             <input
                 type="text"
                 name="name"
@@ -30,7 +31,8 @@ function FriendForm(props) {
                 value={props.newFriend.email}
                 onChange={props.handleChanges}
                 />
-                <div className="baseline"/>
+                <div className="baseline" />
+                <button className="button"onClick={props.addFriend}>Submit</button>
         
         </form>
         </div>

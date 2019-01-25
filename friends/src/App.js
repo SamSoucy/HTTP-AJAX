@@ -56,7 +56,9 @@ class App extends Component {
         {this.state.error && <h4>{this.state.error}</h4>}
         
           <FriendsList friends={this.state.friends} />
-          <FriendForm newFriend={this.state.newFriend} />
+          <FriendForm newFriend={this.state.newFriend}
+            handleChanges={this.handleChanges} 
+            addFriend={this.addFriend}/>
         
         {/* <Route
           exact
@@ -64,6 +66,7 @@ class App extends Component {
           render={props =>
             <FriendForm
               {...props}
+              addfriend={this.addfriend}
               newFriend={this.state.newFriend} 
               handleChanges={this.state.handleChanges} />}
         /> */}
